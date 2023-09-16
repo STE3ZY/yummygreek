@@ -6,3 +6,7 @@
 .nav--logo {
   max-width: 20rem !important;
 }
+
+.nav-links {
+  display: flex;
+}

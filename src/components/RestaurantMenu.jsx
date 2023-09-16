@@ -8,8 +8,8 @@ const RestaurantMenu = () => {
 
   return (
     <>
-      <h1 className="text-5xl text-center m-3">Our Menu</h1>
-      <div className="restaurant-menu ">
+      <h1 className="title-menu text-6xl text-center m-3">Our Menu</h1>
+      <div className="restaurant-menu">
         {dishes.map((dish) => (
           <MenuItem key={dish.id} item={dish} />
         ))}
