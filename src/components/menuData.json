@@ -17,10 +17,7 @@
         "Nutmeg",
         "Béchamel sauce"
       ],
-      "tags": {
-        "dietaryPreferences": ["vegan", "gluten-free"],
-        "allergens": ["contains-nuts", "contains-gluten"]
-      }
+      "tags": ["vegan", "gluten-free", "contains-nuts", "contains-gluten"]
     },
     {
       "id": 2,
@@ -38,10 +35,7 @@
         "Fresh oregano",
         "Red wine vinegar"
       ],
-      "tags": {
-        "dietaryPreferences": ["vegetarian", "lactose-free"],
-        "allergens": []
-      }
+      "tags": ["vegetarian", "lactose-free", "nut-free"]
     },
     {
       "id": 3,
@@ -54,10 +48,7 @@
         "Pita bread",
         "Tzatziki sauce"
       ],
-      "tags": {
-        "dietaryPreferences": ["lactose-free"],
-        "allergens": []
-      }
+      "tags": ["lactose-free", "nut-free"]
     },
     {
       "id": 4,
@@ -71,10 +62,7 @@
         "Feta cheese",
         "Aromatic herbs"
       ],
-      "tags": {
-        "dietaryPreferences": ["vegetarian"],
-        "allergens": []
-      }
+      "tags": ["vegetarian", "nut-free"]
     },
     {
       "id": 5,
@@ -83,10 +71,7 @@
       "price": 7.99,
       "image": "https://i0.wp.com/mintpersonalchef.com/wp-content/uploads/2020/07/IMG_0426.jpg",
       "ingredients": ["Yogurt", "Grated cucumber", "Garlic", "Herbs"],
-      "tags": {
-        "dietaryPreferences": ["vegetarian", "lactose-free"],
-        "allergens": []
-      }
+      "tags": ["vegetarian", "lactose-free", "nut-free"]
     },
     {
       "id": 6,
@@ -100,10 +85,7 @@
         "Aromatic herbs",
         "Lemon sauce"
       ],
-      "tags": {
-        "dietaryPreferences": ["vegan", "gluten-free"],
-        "allergens": []
-      }
+      "tags": ["vegan", "gluten-free", "nut-free"]
     },
     {
       "id": 7,
@@ -118,10 +100,7 @@
         "Artichoke hearts",
         "Feta cheese"
       ],
-      "tags": {
-        "dietaryPreferences": ["vegetarian"],
-        "allergens": ["contains-gluten"]
-      }
+      "tags": ["vegetarian", "contains-gluten", "nut-free"]
     },
     {
       "id": 8,
@@ -130,17 +109,14 @@
       "price": 18.99,
       "image": "https://jesspryles.com/wp-content/uploads/2020/06/grilled-octopus-59-2-1024x683.jpg",
       "ingredients": ["Grilled octopus", "Lemon", "Olive oil"],
-      "tags": {
-        "dietaryPreferences": [],
-        "allergens": []
-      }
+      "tags": ["nut-free"]
     },
     {
       "id": 9,
       "name": "Saganaki",
       "description": "Saganaki is a delightful Greek appetizer featuring flaming cheese. Typically, a slice of cheese (often Kefalotyri, Graviera, or Halloumi) is dredged in flour, pan-fried, and then set ablaze at the table with the help of some brandy. The result is a gooey, slightly crispy, and deliciously cheesy dish that's served with a squeeze of lemon and bread.",
       "price": 11.99,
-      "tags": ["vegan", "gluten-free", "contains-nuts", "contains-gluten"],
+      "tags": ["vegan", "contains-nuts", "contains-gluten"],
       "ingredients": ["Cheese", "Brandy", "Lemon", "Flour"],
       "image": "https://thecheesewanker.com/wp-content/uploads/2022/12/Saganaki-Cheese.jpg"
     },
@@ -149,7 +125,7 @@
       "name": "Greek Lemon Chicken",
       "description": "Greek Lemon Chicken is a flavorful dish featuring roasted chicken with a lemon and oregano marinade. It's typically served with roasted potatoes, creating a harmonious blend of citrusy and savory flavors.",
       "price": 16.99,
-      "tags": ["lactose-free", "contains-gluten"],
+      "tags": ["lactose-free", "contains-gluten", "nut-free"],
       "ingredients": ["Chicken", "Lemon", "Oregano", "Potatoes"],
       "image": "https://i0.wp.com/twimii.com/wp-content/uploads/2020/11/greekchickenpotatoesfeature.jpg?fit=1000%2C667"
     }

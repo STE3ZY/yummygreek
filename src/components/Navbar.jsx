@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar w-full bg-[#313350] shadow">
-      <div className="justify-around px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <div className="justify-center px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-2 md:py-1 md:block">
             <img src={navlogo} className="nav--logo" alt="Logo" />
@@ -57,30 +57,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        <div>
-          <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
-            }`}
-          >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-white hover:text-blue-600">
-                <FontAwesomeIcon
-                  icon={faFilter}
-                  style={{ color: "#c0c0c0" }}
-                  size="xl"
-                />
-              </li>
-              <li className="text-white hover:text-blue-600">
-                <FontAwesomeIcon
-                  icon={faCartShopping}
-                  style={{ color: "#c0c0c0" }}
-                  size="xl"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div></div>
       </div>
     </nav>
   );
