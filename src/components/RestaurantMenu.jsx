@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import MenuItem from "./MenuItem"; // Import the MenuItem component
 import menuData from "./menuData.json"; // Import JSON data
+
 import "./RestaurantMenu.css";
 
 const RestaurantMenu = () => {

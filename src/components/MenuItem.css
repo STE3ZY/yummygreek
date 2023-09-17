@@ -16,3 +16,22 @@
 .ing-button {
   max-width: 150px;
 }
+
+.closeModal {
+  margin-left: 250px;
+  margin-top: -20px;
+}
+
+.closeModal:hover {
+  filter: brightness(100);
+}
+
+.dishTitle {
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.dishDescription {
+  margin-bottom: 10px;
+}

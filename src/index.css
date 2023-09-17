@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.closeMenu {
+  height: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+.closeMenu {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
