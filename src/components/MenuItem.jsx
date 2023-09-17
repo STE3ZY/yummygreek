@@ -68,7 +68,7 @@ const MenuItem = ({ item, addToCart }) => {
             padding: "60px",
             display: "flex",
             flexDirection: "column",
-            width: "400px",
+            width: "380px",
             top: "50%",
             left: "50%",
             right: "auto",
@@ -81,7 +81,7 @@ const MenuItem = ({ item, addToCart }) => {
       >
         <img
           src={closeModal}
-          className="closeMenu closeModal"
+          className="closeMenu closeModal bg-red-700 rounded-full"
           onClick={handleCloseModal}
           alt="Close"
         ></img>
