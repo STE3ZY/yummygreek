@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import navlogo from "../images/nav-logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faFilter } from "@fortawesome/free-solid-svg-icons";
+
 import "./Navbar.css";
 
 export default function Navbar() {

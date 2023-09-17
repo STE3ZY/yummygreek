@@ -5,17 +5,22 @@ import Modal from "react-modal";
 import closeModal from "../images/close.svg";
 import "./MenuItem.css";
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, addToCart }) => {
   Modal.setAppElement("#root");
 
   const [showModal, setShowModal] = useState(false);
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
+  const handleAddToCart = () => {
+    addToCart(item); // Call the addToCart function from props
+    handleCloseModal(); // Close the modal after adding to cart
+  };
+
   return (
     <>
-      <div className="menu-item" onClick={handleOpenModal}>
-        <div className="item-container relative">
+      <div className="menu-item flex flex-col">
+        <div className="item-container relative" onClick={handleOpenModal}>
           <img
             src={item.image}
             alt={item.name}
@@ -29,17 +34,21 @@ const MenuItem = ({ item }) => {
               <p className="item-price bg-opacity-75 bg-gray-900 rounded p-2 text-white text-lg font-bold ">
                 Price: ${item.price.toFixed(2)}
               </p>
-              <button>
-                <FontAwesomeIcon
-                  className="bg-red-500 rounded-full ml-4 p-2"
-                  icon={faCartShopping}
-                  style={{ color: "#ffffff" }}
-                  size="xl"
-                />
-              </button>
             </div>
           </div>
         </div>
+        <button
+          className="z50 bg-blue-500 rounded-full mb-4 p-2 text-white font-bold "
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+          <FontAwesomeIcon
+            className=""
+            icon={faCartShopping}
+            style={{ color: "#ffffff" }}
+            size="xl"
+          />
+        </button>
       </div>
       <Modal
         isOpen={showModal}
@@ -58,7 +67,7 @@ const MenuItem = ({ item }) => {
             bottom: "auto",
             marginRight: "-50%",
             transform: "translate(-50%, -50%)",
-            zIndex: "999",
+            zIndex: "1",
           },
         }}
       >
@@ -81,7 +90,10 @@ const MenuItem = ({ item }) => {
             ))}
           </div>
         </div>
-        <button className="rounded-full bg-blue-500 mt-4 font-bold text-white h-10">
+        <button
+          className="rounded-full bg-blue-500 mt-4 font-bold text-white h-10"
+          onClick={handleAddToCart}
+        >
           Add to cart
         </button>
       </Modal>

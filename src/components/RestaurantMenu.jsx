@@ -2,12 +2,30 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import MenuItem from "./MenuItem"; // Import the MenuItem component
+import CartModal from "./CartModal"; // Import the CartModal component
 import menuData from "./menuData.json"; // Import JSON data
 
 import "./RestaurantMenu.css";
 
 const RestaurantMenu = () => {
   const { dishes } = menuData;
+  const [cart, setCart] = useState([]);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+
+  // Function to add an item to the cart
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
+  // Function to open the cart modal
+  const openCartModal = () => {
+    setIsCartModalOpen(true);
+  };
+
+  // Function to close the cart modal
+  const closeCartModal = () => {
+    setIsCartModalOpen(false);
+  };
 
   // State variables for dietary preferences
   const [glutenFree, setGlutenFree] = useState(false);
@@ -156,14 +174,23 @@ const RestaurantMenu = () => {
             />
           </label>
         </div>
+        <p className="filter-label">Cart:</p>
+        <button onClick={openCartModal} className="view-cart-button">
+          View Cart ({cart.length} items)
+        </button>
       </div>
 
       <h1 className="title-menu text-6xl text-center m-3">Our Menu</h1>
       <div className="restaurant-menu">
         {filteredDishes.map((dish) => (
-          <MenuItem key={dish.id} item={dish} />
+          <MenuItem key={dish.id} item={dish} addToCart={addToCart} />
         ))}
       </div>
+      <CartModal
+        cart={cart}
+        isOpen={isCartModalOpen}
+        closeModal={closeCartModal}
+      />
     </>
   );
 };
