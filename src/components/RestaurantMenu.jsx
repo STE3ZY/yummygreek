@@ -96,7 +96,7 @@ const RestaurantMenu = () => {
 
   return (
     <>
-      <div className="filters flex flex-col text-sm items-center">
+      <div className=" flex flex-col text-sm items-center">
         <p className="range font-bold">Set max price: ${priceRange}</p>
         <input
           type="range"
@@ -105,78 +105,94 @@ const RestaurantMenu = () => {
           value={priceRange}
           onChange={(e) => setPriceRange(e.target.value)}
         />
-        <p className="filter-label font-bold">Dietary Preferences:</p>
-        <div className="dietary-filters">
-          <label>
-            Gluten-free
-            <input
-              type="checkbox"
-              checked={glutenFree}
-              onChange={() => handleDietaryChange("glutenFree")}
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
-            />
-          </label>
-          <label>
-            Lactose-free
-            <input
-              type="checkbox"
-              checked={lactoseFree}
-              onChange={() => handleDietaryChange("lactoseFree")}
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
-            />
-          </label>
-          <label>
-            Nut-free
-            <input
-              type="checkbox"
-              checked={nutFree}
-              onChange={() => handleDietaryChange("nutFree")}
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
-            />
-          </label>
-          <label>
-            Vegan
-            <input
-              type="checkbox"
-              checked={vegan}
-              onChange={() => handleDietaryChange("vegan")}
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
-            />
-          </label>
+        <div className="filters flex justify-between items-start">
+          <div className="diatery flex flex-col mr-4">
+            <p className="filter-label font-bold">Dietary Preferences:</p>
+            <div className="dietary-filters flex flex-col">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={glutenFree}
+                  onChange={() => handleDietaryChange("glutenFree")}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
+                />
+                Gluten-free
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={lactoseFree}
+                  onChange={() => handleDietaryChange("lactoseFree")}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
+                />
+                Lactose-free
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={nutFree}
+                  onChange={() => handleDietaryChange("nutFree")}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
+                />
+                Nut-free
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={vegan}
+                  onChange={() => handleDietaryChange("vegan")}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
+                />
+                Vegan
+              </label>
+            </div>
+          </div>
+          <div className="alergens flex flex-col">
+            <p className="filter-label font-bold">Allergens:</p>
+            <div className="allergen-filters flex flex-col">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={containsNuts}
+                  onChange={() => handleAllergenChange("containsNuts")}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
+                />
+                Contains Nuts
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={containsGluten}
+                  onChange={() => handleAllergenChange("containsGluten")}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
+                />
+                Contains Gluten
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={containsLactose}
+                  onChange={() => handleAllergenChange("containsLactose")}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
+                />
+                Contains Lactose
+              </label>
+            </div>
+          </div>
         </div>
-        <p className="filter-label font-bold">Allergens:</p>
-        <div className="allergen-filters">
-          <label>
-            Contains Nuts
-            <input
-              type="checkbox"
-              checked={containsNuts}
-              onChange={() => handleAllergenChange("containsNuts")}
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
-            />
-          </label>
-          <label>
-            Contains Gluten
-            <input
-              type="checkbox"
-              checked={containsGluten}
-              onChange={() => handleAllergenChange("containsGluten")}
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
-            />
-          </label>
-          <label>
-            Contains Lactose
-            <input
-              type="checkbox"
-              checked={containsLactose}
-              onChange={() => handleAllergenChange("containsLactose")}
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 m-2"
-            />
-          </label>
-        </div>
-        <p className="filter-label">Cart:</p>
-        <button onClick={openCartModal} className="view-cart-button">
-          View Cart ({cart.length} items)
+
+        <button
+          onClick={openCartModal}
+          className="view-cart-button bg-blue-500 text-lg text-white rounded-full p-2"
+        >
+          <span className="font-bold">View</span>{" "}
+          <FontAwesomeIcon
+            className=""
+            icon={faCartShopping}
+            style={{ color: "#ffffff" }}
+            size="xl"
+          />{" "}
+          ({cart.length})
         </button>
       </div>
 

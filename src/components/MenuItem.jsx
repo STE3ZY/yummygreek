@@ -20,7 +20,7 @@ const MenuItem = ({ item, addToCart }) => {
   return (
     <>
       <div className="menu-item flex flex-col">
-        <div className="item-container relative" onClick={handleOpenModal}>
+        <div className="item-container relative">
           <img
             src={item.image}
             alt={item.name}
@@ -37,18 +37,26 @@ const MenuItem = ({ item, addToCart }) => {
             </div>
           </div>
         </div>
-        <button
-          className="z50 bg-blue-500 rounded-full mb-4 p-2 text-white font-bold "
-          onClick={handleAddToCart}
-        >
-          Add to Cart
-          <FontAwesomeIcon
-            className=""
-            icon={faCartShopping}
-            style={{ color: "#ffffff" }}
-            size="xl"
-          />
-        </button>
+        <div className="buttons">
+          <button
+            className="z50 bg-green-500 rounded-full mb-4  mr-6 p-2 text-white font-bold "
+            onClick={handleOpenModal}
+          >
+            Details
+          </button>
+          <button
+            className="z50 bg-blue-500 rounded-full mb-4 p-2 text-white font-bold "
+            onClick={handleAddToCart}
+          >
+            Add
+            <FontAwesomeIcon
+              className=""
+              icon={faCartShopping}
+              style={{ color: "#ffffff" }}
+              size="xl"
+            />
+          </button>
+        </div>
       </div>
       <Modal
         isOpen={showModal}
